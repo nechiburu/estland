@@ -1,0 +1,277 @@
+// Modal css\
+
+.custom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 999;
+}
+.custom-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: initial;
+  border-radius: 4px;
+  outline: none;
+  .box_inner {
+    height: 75vh;
+    width: 1000px;
+    overflow-y: auto;
+
+    @media (max-width: 1600px) {
+      width: 1070px;
+    }
+    @media (max-width: 1400px) {
+      width: 900px;
+    }
+    @media (max-width: 992px) {
+      width: 700px;
+    }
+    @media (max-width: 768px) {
+      width: 560px;
+    }
+    @media (max-width: 599px) {
+      width: 460px;
+    }
+    @media (max-width: 490px) {
+      width: 360px;
+    }
+    @media (max-width: 420px) {
+      width: 320px;
+    }
+  }
+  .scrollable {
+    padding: 50px;
+    @media (max-width: 767px) {
+      padding: 30px 15px;
+    }
+  }
+
+  .blog-grid {
+    cursor: default;
+    .blog-img img {
+      transform: scale(1);
+    }
+    &:hover .blog-img img {
+      filter: grayscale(0);
+      -webkit-filter: grayscale(0);
+      transform: scale(1);
+    }
+  }
+  .article-comment {
+    @media (max-width: 767px) {
+      padding: 30px 15px;
+    }
+  }
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.close-modal {
+  background: transparent;
+  border: none;
+  display: flex;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  z-index: 4;
+  right: -50px;
+  top: -32px;
+  @media screen and (max-width: 1199px) {
+    right: 0px;
+    top: -60px;
+  }
+  @media screen and (max-width: 575px) {
+    right: -10px;
+    top: -37px;
+  }
+  img {
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    position: absolute;
+    filter: invert(1);
+    transition: 0.3s;
+    @media screen and (max-width: 575px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  &:hover {
+    img {
+      filter: invert(0.8);
+    }
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.videoFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 0;
+  padding-bottom: 39.5%;  /* Proporción 16:9 */
+}
+
+iframe {
+  position: absolute; // Esto hará que el iframe ocupe todo el espacio de .videoFrame
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .videoFrame {
+    width: 80%;
+    padding-bottom: 50%; // Ajustamos la proporción para móviles
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.95); /* Hace que el popup sea ligeramente más pequeño */
+  transition: opacity 0.3s, transform 0.3s; /* Transición suave */
+  pointer-events: none; /* Evita interacciones cuando el popup está oculto */
+}
+
+.popup.active {
+  opacity: 1;
+  transform: scale(1); /* Restaura el tamaño original del popup */
+  pointer-events: auto; /* Permite interacciones cuando el popup está visible */
+}
+
+.popup-inner {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+}
+
+.popup.active .popup-inner {
+  transform: scale(1);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #999; /* Cambiar según prefieras */
+  transition: color 0.3s ease-in-out;
+}
+
+.close-btn:hover {
+  color: #333; /* Cambiar según prefieras */
+}
+
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index:9999;
+}
+
+.login-popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playing {
+  background-color: #e0e0e0; /* color de fondo claro */
+  border: 1px solid #333; /* borde oscuro */
+}

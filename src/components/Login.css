@@ -1,0 +1,88 @@
+.login-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-form {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darkblue;
+}
+
+.signup-prompt {
+    margin-top: 20px;
+}
+
+.signup-link {
+    cursor: pointer;
+    color: blue;
+    transition: color 0.3s;
+}
+
+.signup-link:hover {
+    color: #0056b3;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.3s;
+    outline: none; /* Quitar el contorno predeterminado */
+    padding: 0; /* Eliminar cualquier padding adicional */
+    margin: 0; /* Eliminar cualquier margen adicional */
+    display: flex; /* Para centrar el contenido */
+    align-items: center;
+    justify-content: center;
+    width: 30px; /* Establecer un tamaño específico para el botón */
+    height: 30px;
+    border-radius: 50%; /* Hace que el botón sea circular */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: red;
+}
+
